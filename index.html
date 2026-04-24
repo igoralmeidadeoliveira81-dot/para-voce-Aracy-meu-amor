@@ -1,0 +1,67 @@
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Para Aracy</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: white;
+      position: absolute;
+      top: 10%;
+      width: 100%;
+      text-align: center;
+      font-family: Arial;
+      font-size: 50px;
+    }
+
+    img {
+      width: 250px;
+      animation: girar 10s linear infinite;
+      cursor: pointer;
+      transition: transform 0.5s;
+    }
+
+    img:hover {
+      transform: scale(1.2);
+    }
+
+    @keyframes girar {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 id="mensagem">Para Aracy 🌹</h1>
+
+  <img id="rosa" src="rosinha.sem.fundo.png">
+
+  <script>
+    const rosa = document.getElementById("rosa");
+    const mensagem = document.getElementById("mensagem");
+
+    rosa.addEventListener("click", () => {
+      mensagem.innerText = "Eu Te Amo Minha Mongoloid❤️";
+      mensagem.style.color = "red";
+    });
+  </script>
+
+</body>
+</html>

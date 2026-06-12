@@ -1,0 +1,370 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Aracy ❤️</title>
+
+<style>
+
+#carta{
+    display:none;
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    width:500px;
+
+    padding:30px;
+
+    background:white;
+
+    border-radius:20px;
+
+    color:black;
+
+    font-family:Arial;
+
+    box-shadow:0 0 30px rgba(0,0,0,0.5);
+}
+
+body{
+    margin:0;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+
+    background-image:url("baile.sangue.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* DISCO DE VINIL */
+
+.vinil{
+    position:absolute;
+    top:30px;
+    left:30px;
+
+    width:270px;
+
+}
+
+.girando{
+    animation:girar 5s linear infinite;
+}
+
+/* SUA FIGURINHA */
+
+.eu{
+    position:absolute;
+
+    width:400px;
+
+    bottom:390px;
+    left:66%;
+}
+
+/* FIGURINHA DA ARACY */
+
+.aracy{
+    position:absolute;
+
+    width:400px;
+
+    bottom:330px;
+    right:65%;
+}
+
+/* ANIMAÇÃO DO VINIL */
+
+@keyframes girar{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+#cartaBtn{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    width:60px;
+    height:60px;
+
+    border:none;
+    border-radius:50%;
+
+    background:deepskyblue;
+    color:white;
+
+    font-size:30px;
+    cursor:pointer;
+}
+
+#rosaSecreta{
+    position:absolute;
+
+    width:50px;
+
+    bottom:20px;
+    right:20px;
+
+    cursor:pointer;
+}
+
+#surpresa{
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.75);
+
+    backdrop-filter:blur(8px);
+
+    z-index:99999;
+
+    text-align:center;
+}
+
+#fotoSurpresa{
+    width:300px;
+
+    margin-top:100px;
+
+    border-radius:20px;
+}
+
+#surpresa h2{
+    color:white;
+    font-family:Arial;
+}
+
+#surpresa p{
+    color:white;
+    font-family:Arial;
+    font-size:20px;
+
+    max-width:700px;
+    margin:auto;
+}
+
+#fotoSurpresa{
+    width:300px;
+
+    margin-top:100px;
+
+    border-radius:20px;
+
+    animation:aparecer 0.8s ease;
+}
+
+@keyframes girar{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+@media (max-width: 900px){
+
+    .vinil{
+        width:120px;
+        top:15px;
+        left:15px;
+    }
+
+    .eu{
+        width:180px;
+
+        bottom:220px;
+        left:55%;
+    }
+
+    .aracy{
+        width:180px;
+
+        bottom:190px;
+        right:55%;
+    }
+
+    #carta{
+        width:80%;
+    }
+
+    #fotoSurpresa{
+        width:220px;
+    }
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<img src="disco.vinil.png" class="vinil" id="vinil">
+
+<img src="iguin.png" class="eu">
+
+<img src="araçu.png" class="aracy" id="aracy">
+
+<audio id="musica">
+    <source src="felicidade.mp3" type="audio/mpeg">
+
+<audio id="beijo">
+    <source src="beijo.mp3" type="audio/mpeg">
+</audio>
+</audio>
+
+<button id="cartaBtn">💌</button>
+
+<div id="carta">
+
+    <button id="fechar">❌</button>
+
+    <h2>Para Aracy ❤️</h2>
+
+    <p>
+         Nosso baile de lua vermelha que nos iluminam,
+         Minha unica explicação pro sentimento de conexão 
+         que tenho com você, apenas a magia de seu olhos
+         me faz sentir como se você fosse feita pra mim,
+         como se você fosse a unica poção feita para
+         acender meu coração em chamas e tesão por você.
+
+         Peço perdão pelo o pouco que te entrego agora
+         para o dia do amor, mas meus planos com você
+         são muito mais além disso e eu te provavarei.
+          MUA, eu te amo minha mongoloid..
+                                                              
+    </p>
+
+</div>
+
+<img src="rosinha.sem.fundo.png" id="rosaSecreta">
+
+<div id="surpresa">
+
+<button id="fecharSurpresa">❌</button>
+
+    <img src="roga.jpeg" id="fotoSurpresa">
+
+    <h2>Oh não segredo revelado😱😱!</h2>
+
+    <p>
+        O seu iguin usa toquinha de cetim pra dormir e não tira a manhã todaツ
+    </p>
+
+</div>
+
+<script>
+
+const vinil = document.getElementById("vinil");
+const musica = document.getElementById("musica");
+
+let tocando = false;
+
+vinil.addEventListener("click", () => {
+
+    if(!tocando){
+        musica.play();
+        vinil.classList.add("girando");
+        tocando = true;
+    }else{
+        musica.pause();
+        vinil.classList.remove("girando");
+        tocando = false;
+    }
+
+});
+
+const cartaBtn = document.getElementById("cartaBtn");
+const carta = document.getElementById("carta");
+
+cartaBtn.addEventListener("click", () => {
+
+    carta.style.display = "block";
+
+});
+
+const fechar = document.getElementById("fechar");
+
+fechar.addEventListener("click", () => {
+
+    carta.style.display = "none";
+
+});
+
+const aracy = document.getElementById("aracy");
+const beijo = document.getElementById("beijo");
+
+aracy.addEventListener("click", () => {
+
+    beijo.currentTime = 0;
+    beijo.play();
+
+});
+
+const rosaSecreta = document.getElementById("rosaSecreta");
+const surpresa = document.getElementById("surpresa");
+
+rosaSecreta.addEventListener("click", () => {
+
+    surpresa.style.display = "block";
+
+});
+
+const fecharSurpresa = document.getElementById("fecharSurpresa");
+
+fecharSurpresa.addEventListener("click", () => {
+
+    surpresa.style.display = "none";
+
+});
+
+</script>
+
+</body>
+
+</html>
